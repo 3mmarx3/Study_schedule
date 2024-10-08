@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weekdays</title>
+    <style>
+      .day {
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #000;
+        text-align: center;
+      }
+
+      .highlight {
+        background-color: yellow;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="day" data-day="0">الأحد</div>
+    <div class="day" data-day="1">الاثنين</div>
+    <div class="day" data-day="2">الثلاثاء</div>
+    <div class="day" data-day="3">الأربعاء</div>
+    <div class="day" data-day="4">الخميس</div>
+    <div class="day" data-day="5">الجمعة</div>
+    <div class="day" data-day="6">السبت</div>
+
+    <script>
+      // جلب اليوم الحالي (0 للأحد، 1 للاثنين، وهكذا)
+      const today = new Date().getDay();
+
+      // الحصول على كل الديفات اللي عندها كلاس 'day'
+      const dayDivs = document.querySelectorAll(".day");
+
+      // التكرار على الديفات وتحديد اليوم اللي يساوي اليوم الحالي
+      dayDivs.forEach((div) => {
+        if (parseInt(div.getAttribute("data-day")) === today) {
+          div.classList.add("highlight");
+        }
+      });
+    </script>
+  </body>
+</html>

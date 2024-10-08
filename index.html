@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Study_schedule</title>
+    <link rel="stylesheet" href="./style/main.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Study_schedule ( <span>A3</span> ) ...</h1>
+
+      <fieldset data-day="6">
+        <legend>Saturday ( Hall E )</legend>
+        <input
+          type="checkbox"
+          data-day="6"
+          class="chip"
+          role="switch"
+          value="Computer Architecture ( 9 - 11 )"
+          aria-label="Computer Architecture ( 9 - 11 )"
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Machine learning ( 11 - 1 )"
+          aria-label="Machine learning ( 11 - 1 )"
+          style="--color: #fd5"
+          checked
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Modeling and simulation ( 1 - 3 )"
+          aria-label="Modeling and simulation ( 1 - 3 )"
+          style="--color: #f88"
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Digital Logic Design ( 3 - 5 )"
+          aria-label="Digital Logic Design ( 3 - 5 )"
+          style="--color: #fa3"
+        />
+      </fieldset>
+
+      <fieldset data-day="0">
+        <legend>Sunday</legend>
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Computer Networks ( 9 - 11 ) (Hall F)"
+          aria-label="Computer Networks ( 9 - 11 ) (Hall F)"
+          disabled
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Algorithms and Data Structure 1-3 (Hall B)"
+          aria-label="Algorithms and Data Structure 1-3 (Hall B)"
+          style="--color: #fd5"
+          disabled
+        />
+      </fieldset>
+
+      <fieldset data-day="1">
+        <legend>Monday</legend>
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Digital Logic ( 9 - 11 ) (lab 5)"
+          aria-label="Digital Logic ( 9 - 11 ) (lab 5)"
+          disabled
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Machine learning ( 11 - 1 ) (lab 1)"
+          aria-label="Machine learning ( 11 - 1 ) (lab 1)"
+          disabled
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Networks ( 1 - 3 ) (lab 1)"
+          aria-label="Networks ( 1 - 3 ) (lab 1)"
+          disabled
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Data Structure ( 3 - 5 ) (lab 1)"
+          aria-label="Data Structure ( 3 - 5 ) (lab 1)"
+          disabled
+        />
+      </fieldset>
+
+      <fieldset data-day="2">
+        <legend>Tuesday</legend>
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Architecture ( 9 - 11 ) ( Class 4 )"
+          aria-label="Architecture ( 9 - 11 ) ( Class 4 )"
+          disabled
+        />
+        <input
+          type="checkbox"
+          class="chip"
+          role="switch"
+          value="Modeling ( 11 - 1 ) (lab 3)"
+          aria-label="Modeling ( 11 - 1 ) (lab 3)"
+          disabled
+        />
+      </fieldset>
+    </main>
+
+    <script src="./script/app.js"></script>
+  </body>
+</html>
