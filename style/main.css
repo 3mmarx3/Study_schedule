@@ -1288,6 +1288,10 @@ body {
   width: 0;
 }
 
+p.day {
+  color: var(--text-secondary);
+}
+
 .hidden {
   display: none;
 }
