@@ -7,124 +7,883 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <main>
-      <h1>Study_schedule ( <span>A3</span> ) ...</h1>
+    <div class="app">
+      <div class="app__offcanvas offcanvas" id="offcanvas" aria-hidden="true">
+        <div
+          class="offcanvas__overlay"
+          tabindex="-1"
+          data-micromodal-close="data-micromodal-close"
+        >
+          <div
+            class="offcanvas__panel sidepanel"
+            role="dialog"
+            aria-labelledby="navigation-title"
+            data-micromodal-dialog="data-micromodal-dialog"
+          >
+            <div class="sidepanel__container">
+              <h2 class="visually-hidden" id="navigation-title">Navigation</h2>
+              <svg
+                class="sidepanel__logo"
+                height="61"
+                viewBox="0 0 54 61"
+                role="img"
+                aria-label="Codefest logo"
+              >
+                <path
+                  fill="#33a7d8"
+                  d="M39.4.31L8.15 16.34V49.7l3.4 1.2v8.81L17.5 53l22.2 7.86a2.5 2.5 0 003.3-2.4V2.58A2.48 2.48 0 0039.4.31"
+                ></path>
+                <path
+                  d="M32.12 17.8L2.83 14.02c-1.5-.2-2.83 1-2.83 2.54v31.88c0 1.5 1.26 2.68 2.73 2.55l29.3-2.61A2.18 2.18 0 0034 46.19V20c0-1.12-.8-2.05-1.88-2.19"
+                ></path>
+                <path
+                  fill="#fff"
+                  d="M22.81 40.22c0 1.8-1.19 2.71-2.49 2.8-1.03.08-1.84-.11-2.4-.57v-2.48c.6.6 1.58.96 2.31.92.45-.03.68-.3.68-.57 0-1.06-3.05-.53-3.05-3.31 0-1.68 1-2.7 2.6-2.7a2.9 2.9 0 012.06.75v2.32c-.62-.58-1.28-.99-1.98-.97-.42 0-.63.29-.63.56 0 .96 2.9.25 2.9 3.25zM26 34.49l1.28-.01v2.07l-1.28.03v2.83c0 .69.17.94.6.92.23-.01.46-.12.68-.31v2.04c-.3.33-.73.52-1.28.56-1.05.07-1.79-.8-1.8-2.5v-3.5l-.92.02V34.5h.92v-2.16l1.8.03v2.12zM3.7 32.77l7.1.06v2.62l-4.61.05v1.87l3.47-.08v2.54l-3.47.15v3.84L3.7 44V32.77zm9.3 5.29c.09-1 .5-1.63 1.07-1.64.52 0 .95.63.96 1.57l-2.03.07zm1.17-3.74c-2.14 0-3.32 2.15-3.32 4.7 0 2.97 1.54 4.58 3.5 4.44a3.26 3.26 0 002.38-1.07v-2.28c-.62.52-1.27.8-1.92.84-.88.05-1.6-.36-1.8-1.27l4.05-.17v-.74c0-2.44-1-4.45-2.89-4.45zm-3.38-8.09v3.1a4.04 4.04 0 01-2.87 1.05c-2.7-.07-4.92-2.42-4.92-6 0-3.56 2.18-5.64 4.9-5.35a4.4 4.4 0 012.74 1.33v2.93a4.1 4.1 0 00-2.7-1.46c-1.4-.12-2.56.95-2.56 2.7 0 1.83 1.2 2.98 2.64 3.05a3 3 0 002.77-1.35zm17-.24c.06-.88.39-1.4.84-1.37.4.03.75.63.76 1.47l-1.6-.1zm3.2.96c0-2.17-.8-4.05-2.29-4.2-1.7-.15-2.62 1.66-2.62 3.92v.25c.01.31.04.61.09.9v.04l.03.15c.34 1.82 1.38 2.85 2.64 2.89.88.02 1.45-.24 1.9-.75v-2.04c-.5.42-1.01.62-1.53.6a1.45 1.45 0 01-1.42-1.28l3.21.17v-.65zm-8.7 1.5c-.67-.02-1.14-.91-1.14-2.08 0-1.16.47-2 1.14-1.94.48.03.82.37 1.07 1v2.15c-.24.6-.59.9-1.06.88zm1.07 2.1l1.82.05-.01-10.3-1.82-.2v3.27c-.37-.78-.91-1.2-1.6-1.27-1.57-.14-2.54 1.88-2.53 4.16 0 2.27.94 4.42 2.53 4.46.7.01 1.24-.34 1.61-1.08v.91zm-8.15-2.42c-.78-.03-1.35-.96-1.35-2.2 0-1.19.57-2.09 1.34-2.03.77.06 1.32 1.02 1.32 2.2 0 1.2-.55 2.06-1.31 2.03zm0-6.64c-2-.2-3.49 1.67-3.49 4.32 0 2.6 1.43 4.69 3.49 4.74 1.99.05 3.3-1.86 3.3-4.34 0-2.5-1.37-4.54-3.3-4.72z"
+                ></path>
+              </svg>
+              <nav class="sidepanel__menu menu" aria-label="Main">
+                <ul class="menu__list">
+                  <li class="menu__item">
+                    <a class="menu__link menu__link--active" href="#"
+                      >Schedule</a
+                    >
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Map</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Notifications</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#">Updates</a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="sidepanel__user user">
+                <img
+                  class="user__image"
+                  src="https://randomuser.me/api/portraits/women/13.jpg"
+                  width="48"
+                  height="48"
+                  alt=""
+                />
+                <div class="user__name">
+                  <span class="visually-hidden">Username: </span>snowflake
+                </div>
+                <button class="user__button">Sign out</button>
+              </div>
+              <button
+                class="sidepanel__theme-switcher theme-switcher"
+                type="button"
+                aria-label="Switch to dark theme"
+              >
+                <svg
+                  class="theme-switcher__icon"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                >
+                  <path
+                    class="theme-switcher__icon-sun"
+                    d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"
+                  ></path>
+                  <path
+                    class="theme-switcher__icon-moon"
+                    d="M283.211 512c78.962 0 151.079-35.925 198.857-94.792 7.068-8.708-.639-21.43-11.562-19.35-124.203 23.654-238.262-71.576-238.262-196.954 0-72.222 38.662-138.635 101.498-174.394 9.686-5.512 7.25-20.197-3.756-22.23A258.156 258.156 0 0 0 283.211 0c-141.309 0-256 114.511-256 256 0 141.309 114.511 256 256 256z"
+                  ></path>
+                </svg>
+              </button>
+              <button
+                class="sidepanel__close-button visually-hidden-focusable"
+                type="button"
+                data-micromodal-close="data-micromodal-close"
+              >
+                Close navigation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="app__content js-app-content">
+        <header class="app__header header">
+          <button
+            class="header__button header__button-nav"
+            type="button"
+            aria-label="Open navigation"
+            data-micromodal-trigger="offcanvas"
+          >
+            <span class="header__button-icon burger"
+              ><span class="burger__bar"></span
+            ></span>
+          </button>
+          <button
+            class="header__button header__button-search"
+            type="button"
+            aria-label="Open search field"
+          >
+            <svg
+              class="header__button-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 512 512"
+              aria-hidden="true"
+            >
+              <path
+                d="M508.5 468.9L387.1 347.5c-2.3-2.3-5.3-3.5-8.5-3.5h-13.2c31.5-36.5 50.6-84 50.6-136C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c52 0 99.5-19.1 136-50.6v13.2c0 3.2 1.3 6.2 3.5 8.5l121.4 121.4c4.7 4.7 12.3 4.7 17 0l22.6-22.6c4.7-4.7 4.7-12.3 0-17zM208 368c-88.4 0-160-71.6-160-160S119.6 48 208 48s160 71.6 160 160-71.6 160-160 160z"
+              ></path>
+            </svg>
+          </button>
+          <h1 class="header__title">Schedule</h1>
+        </header>
+        <fieldset class="content__filters filters">
+          <legend class="visually-hidden">
+            <h2>Events display filter</h2>
+          </legend>
+          <div class="filters__wrapper">
+            <div class="filters__container">
+              <div class="filters__item">
+                <button
+                  id="showAll"
+                  class="filters__button filters__button--has-icon"
+                >
+                  All
+                </button>
+              </div>
 
-      <fieldset data-day="6">
-        <legend>Saturday ( Hall E )</legend>
-        <input
-          type="checkbox"
-          data-day="6"
-          class="chip"
-          role="switch"
-          value="Computer Architecture ( 9 - 11 )"
-          aria-label="Computer Architecture ( 9 - 11 )"
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Machine learning ( 11 - 1 )"
-          aria-label="Machine learning ( 11 - 1 )"
-          style="--color: #fd5"
-          checked
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Modeling and simulation ( 1 - 3 )"
-          aria-label="Modeling and simulation ( 1 - 3 )"
-          style="--color: #f88"
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Digital Logic Design ( 3 - 5 )"
-          aria-label="Digital Logic Design ( 3 - 5 )"
-          style="--color: #fa3"
-        />
-      </fieldset>
+              <div class="filters__item">
+                <!-- <input
+                  class="filters__input js-filter"
+                  id="filter-live"
+                  type="radio"
+                  name="filter"
+                  value="live"
+                />
+                <label
+                  class="filters__button filters__button--has-icon"
+                  for="filter-live"
+                >
+                  <svg
+                    class="filters__button-icon"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 576 512"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M186.87 157.25l-11.37-11.11a16.44 16.44 0 0 0-24 1.3 168.83 168.83 0 0 0 0 217.12 16.44 16.44 0 0 0 24 1.3l11.37-11.11a15.14 15.14 0 0 0 1.29-20.53 122.72 122.72 0 0 1 0-156.44 15.15 15.15 0 0 0-1.29-20.53zM107.33 79.6L96 68.53a16.41 16.41 0 0 0-23.56 1C25.59 121 0 186.58 0 256s25.59 135 72.44 186.52a16.41 16.41 0 0 0 23.56 1l11.33-11.07c6.11-6 6.06-15.39.36-21.71a230.28 230.28 0 0 1 0-309.37c5.7-6.37 5.75-15.81-.36-21.77zm396.23-10.12a16.41 16.41 0 0 0-23.56-1L468.67 79.6c-6.11 6-6.06 15.39-.36 21.72a230.28 230.28 0 0 1 0 309.37c-5.7 6.32-5.75 15.75.36 21.71L480 443.47a16.41 16.41 0 0 0 23.56-1C550.41 391 576 325.42 576 256s-25.59-135-72.44-186.52zM288 200a56 56 0 1 0 56 56 56 56 0 0 0-56-56zm112.5-53.86l-11.37 11.11a15.15 15.15 0 0 0-1.29 20.53 122.72 122.72 0 0 1 0 156.44 15.15 15.15 0 0 0 1.29 20.53l11.37 11.11a16.44 16.44 0 0 0 24-1.3 168.83 168.83 0 0 0 0-217.12 16.44 16.44 0 0 0-24-1.3z"
+                    ></path></svg
+                  >Saturday
+                </label> -->
 
-      <fieldset data-day="0">
-        <legend>Sunday</legend>
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Computer Networks ( 9 - 11 ) (Hall F)"
-          aria-label="Computer Networks ( 9 - 11 ) (Hall F)"
-          disabled
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Algorithms and Data Structure 1-3 (Hall B)"
-          aria-label="Algorithms and Data Structure 1-3 (Hall B)"
-          style="--color: #fd5"
-          disabled
-        />
-      </fieldset>
+                <button
+                  data-target="div1"
+                  class="filters__button filters__button--has-icon"
+                >
+                  Saturday
+                </button>
+              </div>
+              <div class="filters__item">
+                <button
+                  data-target="div2"
+                  class="filters__button filters__button--has-icon"
+                >
+                  Sunday
+                </button>
+              </div>
+              <div class="filters__item">
+                <button
+                  data-target="div3"
+                  class="filters__button filters__button--has-icon"
+                >
+                  Monday
+                </button>
+              </div>
 
-      <fieldset data-day="1">
-        <legend>Monday</legend>
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Digital Logic ( 9 - 11 ) (lab 5)"
-          aria-label="Digital Logic ( 9 - 11 ) (lab 5)"
-          disabled
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Machine learning ( 11 - 1 ) (lab 1)"
-          aria-label="Machine learning ( 11 - 1 ) (lab 1)"
-          disabled
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Networks ( 1 - 3 ) (lab 1)"
-          aria-label="Networks ( 1 - 3 ) (lab 1)"
-          disabled
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Data Structure ( 3 - 5 ) (lab 1)"
-          aria-label="Data Structure ( 3 - 5 ) (lab 1)"
-          disabled
-        />
-      </fieldset>
+              <div class="filters__item">
+                <button
+                  data-target="div4"
+                  class="filters__button filters__button--has-icon"
+                >
+                  Tuesday
+                </button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="content__schedule schedule">
+          <section class="section-day">
+            <h2 class="section-day__title">
+              <time class="section-day__title-text">30 March ammar</time>
+            </h2>
 
-      <fieldset data-day="2">
-        <legend>Tuesday</legend>
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Architecture ( 9 - 11 ) ( Class 4 )"
-          aria-label="Architecture ( 9 - 11 ) ( Class 4 )"
-          disabled
-        />
-        <input
-          type="checkbox"
-          class="chip"
-          role="switch"
-          value="Modeling ( 11 - 1 ) (lab 3)"
-          aria-label="Modeling ( 11 - 1 ) (lab 3)"
-          disabled
-        />
-      </fieldset>
-    </main>
+            <!-- 0000000000 -->
+
+            <div class="section-day__content hidden" id="div1">
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-0">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">09:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">11:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-0">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-1"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Computer Architecture</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Hall ( F
+                        )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Grand opening" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">11:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">01:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Machine learning</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Yandex
+                        stand
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <ul class="section-period__events" aria-labelledby="period-3">
+                  <!-- strday -->
+                </ul>
+              </section>
+              <section class="section-period">
+                <h3 class="period-time period-time--coming" id="period-4">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">01:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">3:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-4">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-4"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Modeling and sumlation</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Wrike
+                        stand
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Wrike Garage game" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <ul class="section-period__events" aria-labelledby="period-5">
+                  <!-- loremmmmm -->
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">03:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">05:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Digital Logic Design</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Yandex
+                        stand
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- 0000000000000000 -->
+
+            <div class="section-day__content hidden" id="div2">
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-0">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">09:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">11:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-0">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-1"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Computer Networks</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Hall ( F
+                        )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Grand opening" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">11:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">01:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#"
+                        >Algorithms and Data Structure</a
+                      >
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Yandex
+                        stand
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <ul class="section-period__events" aria-labelledby="period-5">
+                  <!-- loremmmmm -->
+                </ul>
+              </section>
+            </div>
+
+            <!-- 000000000000 -->
+
+            <div class="section-day__content hidden" id="div3">
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-0">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">09:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">11:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-0">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-1"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Computer Networks</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Lab ( 5 )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Grand opening" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">11:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">01:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Machine learning</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Lab ( 1 )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <ul class="section-period__events" aria-labelledby="period-3">
+                  <!-- strday -->
+                </ul>
+              </section>
+              <section class="section-period">
+                <h3 class="period-time period-time--coming" id="period-4">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">01:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">3:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-4">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-4"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Networks</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span> Lab ( 1
+                        )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Wrike Garage game" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">03:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">05:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Data Structure </a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Lab ( 1 )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <ul class="section-period__events" aria-labelledby="period-5">
+                  <!-- loremmmmm -->
+                </ul>
+              </section>
+            </div>
+
+            <!-- 000000000000 -->
+
+            <div class="section-day__content hidden" id="div4">
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-0">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">09:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">11:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-0">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-1"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Architecture</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Hall ( F
+                        )
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Grand opening" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+
+              <section class="section-period">
+                <h3 class="period-time period-time--completed" id="period-2">
+                  <time class="period-time__text" role="text"
+                    ><span class="period-time__start">11:00</span
+                    ><span class="visually-hidden"> — </span
+                    ><span class="period-time__end">01:00</span></time
+                  >
+                </h3>
+                <ul class="section-period__events" aria-labelledby="period-2">
+                  <li
+                    class="section-period__event event event--category-1 event--activity event--background-3"
+                    data-filter="category-1"
+                  >
+                    <h3 class="event__title">
+                      <a class="event__link" href="#">Modeling</a>
+                    </h3>
+                    <div class="event__meta meta">
+                      <div class="meta__item">
+                        <span class="visually-hidden">Location: </span>Yandex
+                        stand
+                      </div>
+                      <div class="visually-hidden">Category: Activities</div>
+                    </div>
+                    <button
+                      class="event__favorite-button favorite-button"
+                      aria-label='Add "Просмотр фильма о дизайнерах-маньяках" to favorites'
+                      type="button"
+                    >
+                      <svg
+                        class="favorite-button__icon"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 576 512"
+                        aria-hidden="true"
+                      >
+                        <path
+                          class="favorite-button__icon-stroke"
+                          d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"
+                        ></path>
+                        <path
+                          class="favorite-button__icon-filled"
+                          d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+                        ></path>
+                      </svg>
+                    </button>
+                  </li>
+                </ul>
+              </section>
+            </div>
+
+            <!-- 000000000000 -->
+          </section>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
 
     <script src="./script/app.js"></script>
+
+    <script>
+      const divs = document.querySelectorAll('div[id^="div"]');
+      const showAllButton = document.getElementById("showAll");
+
+      // دالة لتبديل العناصر
+      function showDiv(targetId) {
+        divs.forEach((div) => {
+          if (div.id === targetId) {
+            div.classList.remove("hidden");
+          } else {
+            div.classList.add("hidden");
+          }
+        });
+      }
+
+      // إضافة الأحداث للأزرار
+      document.querySelectorAll("button[data-target]").forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetId = this.getAttribute("data-target");
+          showDiv(targetId);
+        });
+      });
+
+      // إظهار جميع العناصر عند الضغط على زر "عرض الكل"
+      showAllButton.addEventListener("click", function () {
+        divs.forEach((div) => div.classList.remove("hidden"));
+      });
+    </script>
   </body>
 </html>
